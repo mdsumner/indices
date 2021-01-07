@@ -1,0 +1,22 @@
+Package: indices
+Type: Package
+Title: Calculate Common Indices
+Version: 0.2.1
+Date: 2021-01-04
+Authors@R: c(person("Climate Futures Tasmania", role = c("aut")),
+             person("Dean", "Rollins", email = "dean.rollins@utas.edu.au", role = c("ctb", "cre")))
+URL: http://www.climatefutures.org.au
+Description: Functions to calculate common indices
+    For example, various types of GDD, EHF, etc.
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    logging,
+    dplyr,
+    zoo,
+    cfdtk,
+    lubridate
+Suggests: 
+    testthat
+RoxygenNote: 7.1.1
