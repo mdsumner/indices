@@ -65,7 +65,9 @@ jobs:
           done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
           
       - name: Install system package dependencies
-        run: sudo apt-get install libmagick++-dev
+        run: |
+          sudo apt-get install libmagick++-dev  # magick
+          sudo apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev  # gdal
 
       - name: Install dependencies
         run: |
