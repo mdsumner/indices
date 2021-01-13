@@ -68,6 +68,7 @@ jobs:
         run: |
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
+          remotes::install_github("climatefutures/cfdtk", ref="main", auth="${{ secrets.GH_PAT }}")
         shell: Rscript {0}
 
       - name: Check
