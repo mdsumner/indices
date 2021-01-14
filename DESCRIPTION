@@ -17,6 +17,7 @@ Imports:
     zoo,
     cfdtk,
     lubridate
-Suggests: 
+Suggests:
+    tibble,
     testthat
 RoxygenNote: 7.1.1
