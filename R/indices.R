@@ -189,6 +189,13 @@ calc_EHF <- function(EHI_sig, EHI_accl) {
 }
 
 
+## from cfdtk
+Austral_season_month <- function (x)
+{
+  as.integer(ifelse(lubridate::month(x) <= 6, lubridate::month(x) +
+                      6, lubridate::month(x) - 6))
+}
+
 #' Calculate accumulated heat
 #'
 #' For vector of GDD values and a data frame containing associated date information,
@@ -204,7 +211,7 @@ calc_EHF <- function(EHI_sig, EHI_accl) {
 #' @export
 calc_accumulated_heat <- function(dates, GDD_values, from_Austral_month, to_Austral_month = 12) {
   # which days are within the from/to range?
-  x_inds <- which(cfdtk::Austral_season_month(dates) >= from_Austral_month & cfdtk::Austral_season_month(dates) <= to_Austral_month)
+  x_inds <- which(Austral_season_month(dates) >= from_Austral_month & Austral_season_month(dates) <= to_Austral_month)
 
   if(length(x_inds) == 0) {
     stop("No dates in date range")
